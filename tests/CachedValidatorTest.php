@@ -1,6 +1,6 @@
 <?php
 
-use Greensight\LaravelOpenApiTesting\CachedValidator;
+use Ensi\LaravelOpenApiTesting\CachedValidator;
 
 test("cached validator references the same base Validator if paths are the same", function () {
     $validator1 = CachedValidator::fromYaml(__DIR__ . "/stubs/index1.yaml");

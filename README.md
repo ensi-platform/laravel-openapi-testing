@@ -6,7 +6,7 @@ This packages is based on `osteel/openapi-httpfoundation-testing` and provides `
 
 You can install the package via composer:
 
-`composer require greensight/laravel-openapi-testing`
+`composer require ensi/laravel-openapi-testing`
 
 ## Basic usage
 

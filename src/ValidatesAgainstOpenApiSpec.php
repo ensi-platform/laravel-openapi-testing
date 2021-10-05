@@ -1,6 +1,6 @@
 <?php
 
-namespace Greensight\LaravelOpenApiTesting;
+namespace Ensi\LaravelOpenApiTesting;
 
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;

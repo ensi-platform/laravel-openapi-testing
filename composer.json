@@ -1,5 +1,5 @@
 {
-    "name": "greensight/laravel-openapi-testing",
+    "name": "ensi/laravel-openapi-testing",
     "description": "",
     "keywords": [
         "laravel",
@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Greensight\\LaravelOpenApiTesting\\": "src"
+            "Ensi\\LaravelOpenApiTesting\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Greensight\\LaravelOpenApiTesting\\Tests\\": "tests"
+            "Ensi\\LaravelOpenApiTesting\\Tests\\": "tests"
         }
     },
     "scripts": {

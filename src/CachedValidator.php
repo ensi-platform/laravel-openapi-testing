@@ -1,6 +1,6 @@
 <?php
 
-namespace Greensight\LaravelOpenApiTesting;
+namespace Ensi\LaravelOpenApiTesting;
 
 use Osteel\OpenApi\Testing\ValidatorBuilder;
 use Osteel\OpenApi\Testing\ValidatorInterface;
