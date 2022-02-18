@@ -14,7 +14,7 @@ class CachedValidator
         return self::$map[$path] ??= ValidatorBuilder::fromYaml($path)->getValidator();
     }
 
-    public static function fromJson(string $path): ValidatorInterface 
+    public static function fromJson(string $path): ValidatorInterface
     {
         return self::$map[$path] ??= ValidatorBuilder::fromJson($path)->getValidator();
     }

@@ -64,7 +64,7 @@ trait ValidatesAgainstOpenApiSpec
         return $this->createTestResponse($response);
     }
 
-    public function validateAgainstOpenApiSpec(Request $request, SymfonyRequest $symfonyRequest, SymfonyResponse $response, string $method): void 
+    public function validateAgainstOpenApiSpec(Request $request, SymfonyRequest $symfonyRequest, SymfonyResponse $response, string $method): void
     {
         if ($this->_skipNextOpenApiRequestValidation && $this->_skipNextOpenApiResponseValidation) {
             return;
