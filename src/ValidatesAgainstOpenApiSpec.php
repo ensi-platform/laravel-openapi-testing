@@ -178,8 +178,8 @@ trait ValidatesAgainstOpenApiSpec
             return null;
         }
 
-        return $previous instanceof $type 
-            ? $previous 
+        return $previous instanceof $type
+            ? $previous
             : $this->findPreviousExceptionWithType($previous, $type);
     }
 
