@@ -11,6 +11,7 @@ use Osteel\OpenApi\Testing\ValidatorInterface;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
+use Throwable;
 
 trait ValidatesAgainstOpenApiSpec
 {
@@ -156,17 +157,30 @@ trait ValidatesAgainstOpenApiSpec
 
     private function handleFailedValidationException(ValidationException $exception, string $content): void
     {
-        $previous = $exception?->getPrevious()?->getPrevious();
+        /** @var KeywordMismatch */
+        $keyWordMismatchException = $this->findPreviousExceptionWithType($exception, KeywordMismatch::class);
         $extraMessage = '';
-        if ($previous && $previous instanceof KeywordMismatch) {
+        if ($keyWordMismatchException) {
             $extraMessage .= PHP_EOL;
-            $extraMessage .= 'Key: ' . implode(' -> ', $previous->dataBreadCrumb()->buildChain()). PHP_EOL;
-            $extraMessage .= 'Error: '. $previous->getMessage() . PHP_EOL;
+            $extraMessage .= 'Key: ' . implode(' -> ', $keyWordMismatchException->dataBreadCrumb()->buildChain()). PHP_EOL;
+            $extraMessage .= 'Error: '. $keyWordMismatchException->getMessage() . PHP_EOL;
             $extraMessage .= 'Content: ' . PHP_EOL;
             $extraMessage .= json_encode(json_decode($content), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;
         }
 
         TestCase::fail($exception->getMessage() . $extraMessage);
+    }
+
+    private function findPreviousExceptionWithType(Throwable $e, string $type): ?Throwable
+    {
+        $previous = $e->getPrevious();
+        if (!$previous) {
+            return null;
+        }
+
+        return $previous instanceof $type 
+            ? $previous 
+            : $this->findPreviousExceptionWithType($previous, $type);
     }
 
     protected function skipNextOpenApiResponseValidation(): static
