@@ -4,8 +4,11 @@ namespace Ensi\LaravelOpenApiTesting;
 
 use Illuminate\Contracts\Http\Kernel as HttpKernel;
 use Illuminate\Http\Request;
+use League\OpenAPIValidation\Schema\Exception\KeywordMismatch;
 use LogicException;
+use Osteel\OpenApi\Testing\Exceptions\ValidationException;
 use Osteel\OpenApi\Testing\ValidatorInterface;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 
@@ -122,7 +125,11 @@ trait ValidatesAgainstOpenApiSpec
             return;
         }
 
-        $this->assertTrue($validator->validate($request, $uri, $method));
+        try {
+            $validator->validate($request, $uri, $method);
+        } catch (ValidationException $e) {
+            $this->handleFailedValidationException($e, (string) $request->getContent());
+        }
     }
 
     protected function skipNextOpenApiRequestValidation(): static
@@ -140,7 +147,26 @@ trait ValidatesAgainstOpenApiSpec
             return;
         }
 
-        $this->assertTrue($validator->validate($response, $uri, $method));
+        try {
+            $validator->validate($response, $uri, $method);
+        } catch (ValidationException $e) {
+            $this->handleFailedValidationException($e, (string) $response->getContent());
+        }
+    }
+
+    private function handleFailedValidationException(ValidationException $exception, string $content): void
+    {
+        $previous = $exception?->getPrevious()?->getPrevious();
+        $extraMessage = '';
+        if ($previous && $previous instanceof KeywordMismatch) {
+            $extraMessage .= PHP_EOL;
+            $extraMessage .= 'Key: ' . implode(' -> ', $previous->dataBreadCrumb()->buildChain()). PHP_EOL;
+            $extraMessage .= 'Error: '. $previous->getMessage() . PHP_EOL;
+            $extraMessage .= 'Content: ' . PHP_EOL;
+            $extraMessage .= json_encode(json_decode($content), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;
+        }
+
+        TestCase::fail($exception->getMessage() . $extraMessage);
     }
 
     protected function skipNextOpenApiResponseValidation(): static
