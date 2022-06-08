@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.0",
         "osteel/openapi-httpfoundation-testing": "^0.7"
     },
     "require-dev": {
