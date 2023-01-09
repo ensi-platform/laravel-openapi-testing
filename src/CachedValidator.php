@@ -42,17 +42,17 @@ class CachedValidator
                 $cacheFile = self::getCacheFilePath($path);
 
                 if (file_exists($cacheFile)) {
-                    $info = json_decode(file_get_contents($cacheFile), true);
+                    $info = unserialize(file_get_contents($cacheFile));
                     if ($info['hash'] == $hash) {
-                        $validator = unserialize($info['validator']);
+                        $validator = $info['validator'];
                     }
                 }
 
                 if (!$validator) {
                     $validator = $fn($path);
-                    file_put_contents($cacheFile, json_encode([
+                    file_put_contents($cacheFile, serialize([
                         'hash' => $hash,
-                        'validator' => serialize($validator),
+                        'validator' => $validator,
                     ]));
                 }
             } catch (Throwable) {
