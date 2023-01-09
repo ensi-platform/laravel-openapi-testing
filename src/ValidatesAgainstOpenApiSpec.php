@@ -13,6 +13,9 @@ use Symfony\Component\HttpFoundation\Request as SymfonyRequest;
 use Symfony\Component\HttpFoundation\Response as SymfonyResponse;
 use Throwable;
 
+/**
+ * @mixin \Illuminate\Foundation\Testing\TestCase
+ */
 trait ValidatesAgainstOpenApiSpec
 {
     protected bool $_skipNextOpenApiRequestValidation = false;

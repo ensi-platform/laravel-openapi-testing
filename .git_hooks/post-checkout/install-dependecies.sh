@@ -13,5 +13,4 @@ check_run() {
 }
  
 check_run composer.lock "composer install"
-check_run package-lock.json "npm install"
 exit 0
