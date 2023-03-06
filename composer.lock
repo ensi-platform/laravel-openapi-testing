@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/openapi-psr7-validator.git",
-                "reference": "d026ab588e70a75014b2f4c40de966f3e1ed79b9"
+                "reference": "ec962cac822602096e37915852c9797f820ea19b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/openapi-psr7-validator/zipball/d026ab588e70a75014b2f4c40de966f3e1ed79b9",
-                "reference": "d026ab588e70a75014b2f4c40de966f3e1ed79b9",
+                "url": "https://api.github.com/repos/ensi-platform/openapi-psr7-validator/zipball/ec962cac822602096e37915852c9797f820ea19b",
+                "reference": "ec962cac822602096e37915852c9797f820ea19b",
                 "shasum": ""
             },
             "require": {
@@ -206,7 +206,7 @@
             "support": {
                 "source": "https://github.com/ensi-platform/openapi-psr7-validator/tree/task-102882"
             },
-            "time": "2023-03-06T13:45:44+00:00"
+            "time": "2023-03-06T15:17:42+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -7715,12 +7715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "aecadba0fb760a56d4fdad5a65a2be4fda934709"
+                "reference": "c9aeb2561fd1144a6080dd605e6e53184ec7e28e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/aecadba0fb760a56d4fdad5a65a2be4fda934709",
-                "reference": "aecadba0fb760a56d4fdad5a65a2be4fda934709",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/c9aeb2561fd1144a6080dd605e6e53184ec7e28e",
+                "reference": "c9aeb2561fd1144a6080dd605e6e53184ec7e28e",
                 "shasum": ""
             },
             "require": {
@@ -7821,7 +7821,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2023-03-06T10:35:04+00:00"
+            "time": "2023-03-06T13:48:37+00:00"
         },
         {
             "name": "symfony/mailer",
