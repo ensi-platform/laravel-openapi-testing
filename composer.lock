@@ -154,12 +154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ensi-platform/openapi-psr7-validator.git",
-                "reference": "d49f35aad0530599aa541445a492b9705c6ba39e"
+                "reference": "d026ab588e70a75014b2f4c40de966f3e1ed79b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ensi-platform/openapi-psr7-validator/zipball/d49f35aad0530599aa541445a492b9705c6ba39e",
-                "reference": "d49f35aad0530599aa541445a492b9705c6ba39e",
+                "url": "https://api.github.com/repos/ensi-platform/openapi-psr7-validator/zipball/d026ab588e70a75014b2f4c40de966f3e1ed79b9",
+                "reference": "d026ab588e70a75014b2f4c40de966f3e1ed79b9",
                 "shasum": ""
             },
             "require": {
@@ -206,7 +206,7 @@
             "support": {
                 "source": "https://github.com/ensi-platform/openapi-psr7-validator/tree/task-102882"
             },
-            "time": "2023-03-06T12:52:34+00:00"
+            "time": "2023-03-06T13:45:44+00:00"
         },
         {
             "name": "justinrainbow/json-schema",
@@ -5043,12 +5043,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "9d7019dcb26dcf45aca95596b19bf52cef855844"
+                "reference": "443bc6912c9bd5b409254a40f4b0f4ced7c80ea1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/9d7019dcb26dcf45aca95596b19bf52cef855844",
-                "reference": "9d7019dcb26dcf45aca95596b19bf52cef855844",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/443bc6912c9bd5b409254a40f4b0f4ced7c80ea1",
+                "reference": "443bc6912c9bd5b409254a40f4b0f4ced7c80ea1",
                 "shasum": ""
             },
             "require": {
@@ -5104,7 +5104,7 @@
             ],
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/9.2.26"
             },
             "funding": [
                 {
@@ -5112,7 +5112,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-06T07:17:57+00:00"
+            "time": "2023-03-06T12:58:08+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
