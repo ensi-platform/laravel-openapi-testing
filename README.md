@@ -1,6 +1,6 @@
 # Laravel OpenApi Testing
 
-This packages is based on `osteel/openapi-httpfoundation-testing` and provides `ValidatesAgainstOpenApiSpec` trait
+This packages is based on `ensi/openapi-httpfoundation-testing` and provides `ValidatesAgainstOpenApiSpec` trait
 
 ## Installation
 
@@ -33,7 +33,7 @@ Both request and response is validated to match some part of the given spec. If 
 ### Turning validation off
 
 In some cases you may want to turn validation for a specific request.
-Here is an exanple how to do it:
+Here is an example how to do it:
 
 ```php
 // Turn off validation for both request
