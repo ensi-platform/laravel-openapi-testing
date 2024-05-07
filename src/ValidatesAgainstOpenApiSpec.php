@@ -68,7 +68,7 @@ trait ValidatesAgainstOpenApiSpec
 
         $this->validateAgainstOpenApiSpec($request, $symfonyRequest, $response, $method);
 
-        return $this->createTestResponse($response);
+        return $this->createTestResponse($response, $request);
     }
 
     public function validateAgainstOpenApiSpec(Request $request, SymfonyRequest $symfonyRequest, SymfonyResponse $response, string $method): void
