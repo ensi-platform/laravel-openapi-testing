@@ -1,12 +1,27 @@
 # Laravel OpenApi Testing
 
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/ensi/laravel-openapi-testing.svg?style=flat-square)](https://packagist.org/packages/ensi/laravel-openapi-testing)
+[![Tests](https://github.com/ensi-platform/laravel-openapi-testing/actions/workflows/run-tests.yml/badge.svg?branch=master)](https://github.com/ensi-platform/laravel-openapi-testing/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/ensi/laravel-openapi-testing.svg?style=flat-square)](https://packagist.org/packages/ensi/laravel-openapi-testing)
+
 This packages is based on `ensi/openapi-httpfoundation-testing` and provides `ValidatesAgainstOpenApiSpec` trait
 
 ## Installation
 
 You can install the package via composer:
 
-`composer require ensi/laravel-openapi-testing`
+```bash
+composer require ensi/laravel-openapi-testing --dev
+```
+
+## Version Compatibility
+
+| Laravel OpenApi Testing | PHP  |
+|-------------------------|------|
+| ^0.1.0                  | ^8.0 |
+| ^0.2.0                  | ^8.0 |
+| ^0.3.0                  | ^8.0 |
+| ^0.4.0                  | ^8.1 |
 
 ## Basic usage
 
@@ -63,12 +78,11 @@ Please see [CONTRIBUTING](.github/CONTRIBUTING.md) for details.
 ### Testing
 
 1. composer install
-2. npm i
-3. composer test
+2. composer test
 
 ## Security Vulnerabilities
 
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
+Please review [our security policy](.github/SECURITY.md) on how to report security vulnerabilities.
 
 ## License
 

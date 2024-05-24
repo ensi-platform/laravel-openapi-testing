@@ -165,8 +165,8 @@ trait ValidatesAgainstOpenApiSpec
         $extraMessage = '';
         if ($keyWordMismatchException) {
             $extraMessage .= PHP_EOL;
-            $extraMessage .= 'Key: ' . implode(' -> ', $keyWordMismatchException->dataBreadCrumb()->buildChain()). PHP_EOL;
-            $extraMessage .= 'Error: '. $keyWordMismatchException->getMessage() . PHP_EOL;
+            $extraMessage .= 'Key: ' . implode(' -> ', $keyWordMismatchException->dataBreadCrumb()->buildChain()) . PHP_EOL;
+            $extraMessage .= 'Error: ' . $keyWordMismatchException->getMessage() . PHP_EOL;
             $extraMessage .= 'Content: ' . PHP_EOL;
             $extraMessage .= json_encode(json_decode($content), JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE) . PHP_EOL;
         }

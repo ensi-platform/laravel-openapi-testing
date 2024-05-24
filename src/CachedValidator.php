@@ -69,7 +69,7 @@ class CachedValidator
     {
         $array = [];
         $dir = realpath($dir);
-        $fileSPLObjects =  new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir), RecursiveIteratorIterator::CHILD_FIRST);
+        $fileSPLObjects = new RecursiveIteratorIterator(new RecursiveDirectoryIterator($dir), RecursiveIteratorIterator::CHILD_FIRST);
         foreach ($fileSPLObjects as $fullFileName => $fileSPLObject) {
             if ($fileSPLObject->isFile()) {
                 $array[] = $fullFileName;
