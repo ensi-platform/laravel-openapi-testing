@@ -93,7 +93,7 @@ trait ValidatesAgainstOpenApiSpec
         return CachedValidator::fromYaml($yamlPath);
     }
 
-    protected function forceOpenApiPath(string $path)
+    public function forceOpenApiPath(string $path)
     {
         $this->_forcedOpenApiPath = $path;
 
@@ -116,7 +116,7 @@ trait ValidatesAgainstOpenApiSpec
         return $request->getRequestUri();
     }
 
-    protected function skipNextOpenApiValidation(): static
+    public function skipNextOpenApiValidation(): static
     {
         return $this->skipNextOpenApiRequestValidation()->skipNextOpenApiResponseValidation();
     }
@@ -136,7 +136,7 @@ trait ValidatesAgainstOpenApiSpec
         }
     }
 
-    protected function skipNextOpenApiRequestValidation(): static
+    public function skipNextOpenApiRequestValidation(): static
     {
         $this->_skipNextOpenApiRequestValidation = true;
 
@@ -186,7 +186,7 @@ trait ValidatesAgainstOpenApiSpec
             : $this->findPreviousExceptionWithType($previous, $type);
     }
 
-    protected function skipNextOpenApiResponseValidation(): static
+    public function skipNextOpenApiResponseValidation(): static
     {
         $this->_skipNextOpenApiResponseValidation = true;
 
